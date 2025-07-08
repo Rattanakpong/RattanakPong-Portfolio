@@ -9,22 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 // Removed Dialog components as we are now linking to a separate page
 // import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import {
-  ArrowLeft,
-  Search,
-  Calendar,
-  Clock,
-  User,
-  Heart,
-  Share2,
-  MessageCircle,
-  Github,
-  Twitter,
-  Linkedin,
-  Mail,
-  Menu,
-  X,
-} from "lucide-react"
+import { Search, Calendar, User, Github, Twitter, Linkedin, Menu, X } from "lucide-react"
 
 export default function BlogPage() {
   const [activeSection, setActiveSection] = useState("blog")
@@ -38,7 +23,8 @@ export default function BlogPage() {
       excerpt:
         "My first real breakthrough came when I connected a Laravel backend to a React frontend. It wasn’t perfect, but it worked—and that was a big deal.",
       date: "2024-12-15",
-      image: "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210222183454/How-to-Become-a-Full-Stack-Web-Developer-in-2021.png",
+      image:
+        "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210222183454/How-to-Become-a-Full-Stack-Web-Developer-in-2021.png",
       slug: "my-web-dev-journey-from-scratch-to-full-stack", // Changed slug to be more descriptive for URL
       category: "Web Development",
       author: "RattanakPong",
@@ -126,6 +112,10 @@ export default function BlogPage() {
       window.location.href = "/contact"
       return
     }
+    if (sectionId === "projects") {
+      window.location.href = "/projects"
+      return
+    }
     setIsMenuOpen(false)
   }
 
@@ -210,22 +200,22 @@ export default function BlogPage() {
       <header className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-in-top">
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Blog</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8 animate-slide-in-bottom animation-delay-300">
               Thoughts, tutorials, and insights from my development journey
             </p>
 
             {/* Search Bar */}
-            <div className="max-w-md mx-auto relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <div className="max-w-md mx-auto relative animate-zoom-in animation-delay-500">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 animate-wiggle" />
               <Input
                 placeholder="Search articles..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 // Added rounded-lg for consistent styling
-                className="rounded-lg pl-10 bg-slate-800/50 border-purple-500/20 text-white placeholder:text-gray-400 focus:border-purple-400"
+                className="rounded-lg pl-10 bg-slate-800/50 border-purple-500/20 text-white placeholder:text-gray-400 focus:border-purple-400 hover-glow"
               />
             </div>
           </div>
@@ -274,8 +264,8 @@ export default function BlogPage() {
                 // Use Link to navigate to the slug page
                 <Link key={index} href={`/blog/${post.slug}`}>
                   <Card
-                    // Applied `card-with-gradient-bg` and `rounded-xl` for consistent styling
-                    className="card-with-gradient-bg rounded-xl border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 group cursor-pointer transform hover:scale-105 hover:-translate-y-2 h-full"
+                    className="card-with-gradient-bg rounded-xl border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 group cursor-pointer transform hover:scale-105 hover:-translate-y-2 h-full hover-glow animate-flip-in"
+                    style={{ animationDelay: `${index * 150}ms` }}
                   >
                     <div className="relative overflow-hidden">
                       <Image
@@ -285,7 +275,9 @@ export default function BlogPage() {
                         height={200}
                         className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                      <Badge className="absolute top-4 left-4 bg-purple-600/80 text-white">{post.category}</Badge>
+                      <Badge className="absolute top-4 left-4 bg-purple-600/80 text-white animate-slide-in-left">
+                        {post.category}
+                      </Badge>
                     </div>
                     <CardHeader>
                       <div className="flex items-center text-sm text-gray-400 mb-2 space-x-4">

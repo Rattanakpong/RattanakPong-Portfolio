@@ -142,7 +142,8 @@ export default function Portfolio() {
       title: "Finger Detection System",
       description:
         "Advanced computer vision project using Python to detect and track finger movements through camera input with real-time processing.",
-      image: "https://media.licdn.com/dms/image/v2/D4D12AQEqDr2WmIDKrg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1690389776221?e=2147483647&v=beta&t=rmcw04M_gjDusRH6StfZZiLNDSnl1Wg0mNoTfg04DlE",
+      image:
+        "https://media.licdn.com/dms/image/v2/D4D12AQEqDr2WmIDKrg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1690389776221?e=2147483647&v=beta&t=rmcw04M_gjDusRH6StfZZiLNDSnl1Wg0mNoTfg04DlE",
       tags: ["Python", "OpenCV", "Computer Vision", "Machine Learning"],
       github: "https://github.com/Rattanakpong/Finger-Detected",
       featured: false,
@@ -160,7 +161,8 @@ export default function Portfolio() {
       title: "Immigration Management System",
       description:
         "Full-stack web application providing comprehensive immigration services and document management for Cambodia.",
-      image: "https://cdn.cfr.org/sites/default/files/styles/immersive_image_3_2_desktop_2x/public/image/2024/08/ImmigrationDebate_HP.webp",
+      image:
+        "https://cdn.cfr.org/sites/default/files/styles/immersive_image_3_2_desktop_2x/public/image/2024/08/ImmigrationDebate_HP.webp",
       tags: ["PHP", "MySQL", "JavaScript", "Bootstrap"],
       github: "https://github.com/Rattanakpong/CRMS-Web",
       featured: false,
@@ -173,7 +175,8 @@ export default function Portfolio() {
       excerpt:
         "My first real breakthrough came when I connected a Laravel backend to a React frontend. It wasn’t perfect, but it worked—and that was a big deal.",
       date: "2024-12-15",
-      image: "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210222183454/How-to-Become-a-Full-Stack-Web-Developer-in-2021.png",
+      image:
+        "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210222183454/How-to-Become-a-Full-Stack-Web-Developer-in-2021.png",
       slug: "page",
       category: "Web Development",
       author: "RattanakPong",
@@ -256,7 +259,7 @@ export default function Portfolio() {
                 { name: "Home", id: "home" },
                 { name: "About", id: "about", link: "/about" },
                 { name: "Experience", id: "experience" },
-                { name: "Projects", id: "projects" },
+                { name: "Projects", id: "projects", link: "/projects" },
                 { name: "Blog", id: "blog" },
               ].map((item) =>
                 item.link ? (
@@ -310,7 +313,7 @@ export default function Portfolio() {
                 { name: "Home", id: "home" },
                 { name: "About", id: "about", link: "/about" },
                 { name: "Experience", id: "experience" },
-                { name: "Projects", id: "projects" },
+                { name: "Projects", id: "projects", link: "/projects" },
                 { name: "Blog", id: "blog" },
               ].map((item) =>
                 item.link ? (
@@ -352,29 +355,29 @@ export default function Portfolio() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
               <div className="space-y-4">
-                <div className="inline-flex items-center px-4 py-2 bg-purple-600/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-medium mb-4">
+                <div className="inline-flex items-center px-4 py-2 bg-purple-600/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-medium mb-4 animate-slide-in-top">
                   <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
                   Available for new opportunities
                 </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold animate-fade-in-up">
+                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold animate-slide-in-left animation-delay-200">
                   <span className="text-white">Hi, I'm </span>
-                  <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent animate-wiggle">
                     PONG
                   </span>
                 </h1>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-300 animate-fade-in-up animation-delay-200">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-300 animate-slide-in-left animation-delay-400">
                   Full-Stack Developer & Designer
                 </h2>
-                <p className="text-lg sm:text-xl text-gray-300 max-w-lg mx-auto lg:mx-0 animate-fade-in-up animation-delay-400">
+                <p className="text-lg sm:text-xl text-gray-300 max-w-lg mx-auto lg:mx-0 animate-slide-in-left animation-delay-600">
                   Passionate about creating innovative digital solutions that bridge technology and user experience.
                   Specializing in modern web development and creative design.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-600">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-in-bottom animation-delay-800">
                 <Button
                   size="lg"
                   onClick={() => scrollToSection("projects")}
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-300"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-300 hover-lift"
                 >
                   <Briefcase className="w-4 h-4 mr-2" />
                   View My Work
@@ -383,54 +386,54 @@ export default function Portfolio() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white bg-transparent transform hover:scale-105 transition-all duration-300"
+                    className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white bg-transparent transform hover:scale-105 transition-all duration-300 hover-glow"
                   >
                     <Mail className="w-4 h-4 mr-2" />
                     Let's Connect
                   </Button>
                 </Link>
               </div>
-              <div className="flex justify-center lg:justify-start space-x-6 animate-fade-in-up animation-delay-800">
+              <div className="flex justify-center lg:justify-start space-x-6 animate-bounce-in animation-delay-1000">
                 <Link
                   href="https://github.com/Rattanakpong"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-110"
+                  className="text-gray-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-110 hover-rotate"
                 >
                   <Github className="w-6 h-6" />
                 </Link>
                 <Link
                   href="https://x.com/PhaRattanakpong"
-                  className="text-gray-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-110"
+                  className="text-gray-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-110 hover-rotate"
                 >
                   <Twitter className="w-6 h-6" />
                 </Link>
                 <Link
                   href="https://www.linkedin.com/in/pha-rattanakpong-7116702a5/"
-                  className="text-gray-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-110"
+                  className="text-gray-400 hover:text-purple-400 transition-all duration-300 transform hover:scale-110 hover-rotate"
                 >
                   <Linkedin className="w-6 h-6" />
                 </Link>
               </div>
             </div>
             <div className="relative order-first lg:order-last">
-              <div className="relative w-full h-64 sm:h-96 lg:h-[500px] animate-float">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-full blur-3xl"></div>
+              <div className="relative w-full h-64 sm:h-96 lg:h-[500px] animate-zoom-in animation-delay-300">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-full blur-3xl animate-pulse"></div>
                 <Image
                   src="/profile-photo.jpg"
                   alt="Rattanak Pong - Professional Developer"
                   fill
-                  className="object-cover rounded-2xl border-4 border-purple-500/30 shadow-2xl relative z-10"
+                  className="object-cover rounded-2xl border-4 border-purple-500/30 shadow-2xl relative z-10 hover-glow"
                   priority
                 />
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse"></div>
-                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse animation-delay-400"></div>
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-bounce"></div>
+                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-bounce animation-delay-400"></div>
               </div>
             </div>
           </div>
 
           {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce animation-delay-1200">
             <ChevronDown className="w-6 h-6 text-purple-400" />
           </div>
         </div>
@@ -505,10 +508,11 @@ export default function Portfolio() {
                 ].map((item, index) => (
                   <Card
                     key={index}
-                    className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-purple-500/20 hover:border-purple-400/40 transition-all duration-300"
+                    className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 hover-lift animate-flip-in"
+                    style={{ animationDelay: `${index * 200}ms` }}
                   >
                     <CardContent className="p-4">
-                      <item.icon className="w-6 h-6 text-purple-400 mb-2" />
+                      <item.icon className="w-6 h-6 text-purple-400 mb-2 animate-wiggle" />
                       <h4 className="text-white font-semibold text-sm mb-2">{item.title}</h4>
                       <p className="text-gray-300 text-xs">{item.description}</p>
                     </CardContent>
@@ -524,9 +528,7 @@ export default function Portfolio() {
       <section id="experience" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8" ref={experienceSectionRef}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 animate-fade-in-up">
-              Personal Experience
-            </h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 animate-fade-in-up">Personal Experience</h2>
             <p className="text-gray-300 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
               My journey through various roles and the experiences that shaped my expertise
             </p>
@@ -620,10 +622,10 @@ export default function Portfolio() {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className={`bg-gradient-to-br from-slate-800/50 to-purple-900/50 border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 group transform hover:scale-105 hover:-translate-y-2 animate-fade-in-up ${
+                className={`bg-gradient-to-br from-slate-800/50 to-purple-900/50 border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 group transform hover:scale-105 hover:-translate-y-2 animate-slide-in-bottom hover-glow ${
                   project.featured ? "ring-2 ring-purple-400/30" : ""
                 }`}
-                style={{ animationDelay: `${index * 200}ms` }}
+                style={{ animationDelay: `${index * 150}ms` }}
               >
                 {project.featured && (
                   <div className="absolute -top-2 -right-2 bg-gradient-to-r from-purple-400 to-pink-400 text-white text-xs px-2 py-1 rounded-full">
@@ -834,7 +836,7 @@ export default function Portfolio() {
               RattanakPong
             </div>
             <div className="flex space-x-6">
-            <Link
+              <Link
                 href="https://github.com/Rattanakpong"
                 target="_blank"
                 rel="noopener noreferrer"

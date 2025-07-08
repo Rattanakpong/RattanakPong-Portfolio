@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
-  ArrowLeft,
   Github,
   Twitter,
   Linkedin,
@@ -50,20 +49,20 @@ export default function AboutPage() {
       return
     }
     if (sectionId === "projects") {
-        window.location.href = "/projects"; // Assuming 'projects' is a separate page
-        return;
+      window.location.href = "/projects"
+      return
     }
 
     // Handle internal links (scroll to section on the current page)
-    const element = document.getElementById(sectionId);
+    const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Smooth scroll to the element
-      setActiveSection(sectionId); // Set the active section for highlighting
+      element.scrollIntoView({ behavior: "smooth", block: "start" }) // Smooth scroll to the element
+      setActiveSection(sectionId) // Set the active section for highlighting
     } else {
       // Optional: Log a warning if an internal ID is not found
-      console.warn(`Attempted to scroll to section with ID '${sectionId}', but element not found.`);
+      console.warn(`Attempted to scroll to section with ID '${sectionId}', but element not found.`)
     }
-    setIsMenuOpen(false); // Close mobile menu after selection
+    setIsMenuOpen(false) // Close mobile menu after selection
   }
 
   const experiences = [
@@ -155,7 +154,11 @@ export default function AboutPage() {
 
   const certifications = [
     { name: "Master Laravel 12 & PHP: From Beginner to Advanced", issuer: "Udemy", year: "2024" },
-    { name: "Master modern React from beginner to advanced! Next.js, Context API, React Query, Redux, Tailwind, advanced patterns", issuer: "Udemy", year: "2024" },
+    {
+      name: "Master modern React from beginner to advanced! Next.js, Context API, React Query, Redux, Tailwind, advanced patterns",
+      issuer: "Udemy",
+      year: "2024",
+    },
     { name: "CS50's Introduction to Computer Science", issuer: "Edx, HarvardX", year: "2024" },
     { name: "Javascript-algorithms-and-data-structures", issuer: "FreeCodeCamp", year: "2025" },
     { name: "Listening & Note Taling Skills  1 & 2", issuer: "ACE", year: "2024" },
@@ -277,13 +280,13 @@ export default function AboutPage() {
       <header className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-in-top">
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 About Me
               </span>
             </h1>
-            <div className="flex justify-center mb-6">
-              <div className="relative w-32 h-32">
+            <div className="flex justify-center mb-6 animate-zoom-in animation-delay-300">
+              <div className="relative w-32 h-32 hover-glow">
                 <Image
                   src="/profile-photo.jpg"
                   alt="Rattanak Pong"
@@ -292,7 +295,7 @@ export default function AboutPage() {
                 />
               </div>
             </div>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto animate-slide-in-bottom animation-delay-500">
               Get to know more about my journey, skills, and passion for technology
             </p>
           </div>
@@ -457,16 +460,16 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-white mb-8 text-center">Technical Skills</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {skills.map((skillGroup, index) => (
-                <Card key={index}>
+                <Card key={index} className="hover-lift animate-flip-in" style={{ animationDelay: `${index * 200}ms` }}>
                   <CardHeader>
-                    <CardTitle className="text-white text-lg">{skillGroup.category}</CardTitle>
+                    <CardTitle className="text-white text-lg animate-wiggle">{skillGroup.category}</CardTitle>
                     <div className="flex justify-between items-center">
                       <span className="text-gray-400 text-sm">Proficiency</span>
-                      <span className="text-purple-400 font-semibold">{skillGroup.level}%</span>
+                      <span className="text-purple-400 font-semibold animate-bounce">{skillGroup.level}%</span>
                     </div>
                     <div className="w-full bg-gray-700 rounded-full h-2">
                       <div
-                        className="bg-gradient-to-r from-purple-400 to-pink-400 h-2 rounded-full transition-all duration-1000"
+                        className="bg-gradient-to-r from-purple-400 to-pink-400 h-2 rounded-full transition-all duration-1000 animate-pulse"
                         style={{ width: `${skillGroup.level}%` }}
                       ></div>
                     </div>
@@ -646,7 +649,6 @@ export default function AboutPage() {
               >
                 <Linkedin className="w-5 h-5" />
               </Link>
-
             </div>
           </div>
           <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-purple-500/20 text-center text-gray-400">

@@ -10,7 +10,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import {
-  ArrowLeft,
   Mail,
   Phone,
   MapPin,
@@ -66,6 +65,10 @@ export default function ContactPage() {
     }
     if (sectionId === "blog") {
       window.location.href = "/blog"
+      return
+    }
+    if (sectionId === "projects") {
+      window.location.href = "/projects"
       return
     }
     setIsMenuOpen(false)
@@ -203,14 +206,13 @@ export default function ContactPage() {
       <header className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-in-top">
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Get In Touch
               </span>
             </h1>
-            <div className="flex justify-center mb-6">
-              {/* Added profile-photo-container class for glow effect */}
-              <div className="relative w-32 h-32 profile-photo-container">
+            <div className="flex justify-center mb-6 animate-zoom-in animation-delay-300">
+              <div className="relative w-32 h-32 profile-photo-container hover-glow">
                 <Image
                   src="/profile-photo.jpg"
                   alt="Profile photo"
@@ -219,8 +221,7 @@ export default function ContactPage() {
                 />
               </div>
             </div>
-            {/* Added leading-relaxed for better readability */}
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed animate-slide-in-bottom animation-delay-500">
               Have a project in mind? Let's work together to bring your ideas to life
             </p>
           </div>
@@ -234,11 +235,11 @@ export default function ContactPage() {
             {contactInfo.map((info, index) => (
               <Card
                 key={index}
-                // Applied new gradient class and added rounded-xl
-                className="card-with-gradient-bg rounded-xl border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 text-center group"
+                className="card-with-gradient-bg rounded-xl border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 text-center group hover-glow animate-bounce-in"
+                style={{ animationDelay: `${index * 200}ms` }}
               >
                 <CardHeader>
-                  <info.icon className="w-12 h-12 text-purple-400 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+                  <info.icon className="w-12 h-12 text-purple-400 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 animate-wiggle" />
                   <CardTitle className="text-white text-xl">{info.title}</CardTitle>
                   <CardDescription className="text-gray-300">{info.description}</CardDescription>
                 </CardHeader>
